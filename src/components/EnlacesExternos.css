@@ -1,0 +1,83 @@
+/* ============================================
+   ENLACES — Footer de recursos con estilo
+   ============================================ */
+
+.enlaces-externos {
+  scroll-margin-top: 2rem;
+}
+
+.enlaces-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 1rem;
+}
+
+.enlace-card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 1.25rem 1.4rem;
+  background: var(--bg-card, #161310);
+  border: 1px solid var(--border, #2a2218);
+  border-radius: 12px;
+  color: var(--text-secondary, #c4ad90);
+  text-decoration: none;
+  transition: border-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease, color 0.3s ease;
+  group: '';
+}
+
+.enlace-card:hover {
+  border-color: rgba(201, 150, 60, 0.4);
+  color: var(--text-primary, #f0e6d3);
+  transform: translateY(-4px);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.5);
+  text-decoration: none;
+}
+
+.enlace-nombre {
+  font-size: 0.92rem;
+  font-weight: 500;
+  line-height: 1.4;
+}
+
+.enlace-arrow {
+  flex-shrink: 0;
+  width: 2rem;
+  height: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid rgba(201, 150, 60, 0.25);
+  border-radius: 50%;
+  color: var(--gold, #c9963c);
+  font-size: 0.8rem;
+  transition: background 0.3s ease, border-color 0.3s ease, transform 0.3s ease;
+}
+
+.enlace-card:hover .enlace-arrow {
+  background: var(--gold, #c9963c);
+  color: #0c0a08;
+  border-color: var(--gold, #c9963c);
+  transform: rotate(45deg);
+}
+
+/* Nota al pie */
+.enlaces-footer-note {
+  margin-top: 2rem;
+  text-align: center;
+  font-size: 0.78rem;
+  color: var(--text-muted, #7d6b55);
+  letter-spacing: 0.05em;
+}
+
+.enlaces-footer-note strong {
+  color: var(--gold, #c9963c);
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .enlaces-grid {
+    grid-template-columns: 1fr;
+  }
+}

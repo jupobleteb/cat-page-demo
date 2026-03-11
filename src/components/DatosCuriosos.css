@@ -1,0 +1,90 @@
+/* ============================================
+   DATOS CURIOSOS — Tarjetas numeradas elegantes
+   ============================================ */
+
+.datos-curiosos {
+  scroll-margin-top: 2rem;
+}
+
+.curiosidades-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 1rem;
+}
+
+.dato-card {
+  display: flex;
+  align-items: flex-start;
+  gap: 1.25rem;
+  padding: 1.5rem;
+  background: var(--bg-card, #161310);
+  border: 1px solid var(--border, #2a2218);
+  border-radius: 14px;
+  transition: border-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.dato-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(201, 150, 60, 0.04) 0%, transparent 60%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.dato-card:hover {
+  border-color: rgba(201, 150, 60, 0.35);
+  transform: translateY(-4px);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.5);
+}
+
+.dato-card:hover::before {
+  opacity: 1;
+}
+
+/* Número dorado */
+.dato-number {
+  flex-shrink: 0;
+  width: 2.4rem;
+  height: 2.4rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #c9963c 0%, #a07828 100%);
+  color: #0c0a08;
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  border-radius: 50%;
+  box-shadow: 0 2px 12px rgba(201, 150, 60, 0.35);
+  position: relative;
+  z-index: 1;
+}
+
+/* Texto */
+.dato-text {
+  font-size: 0.97rem;
+  color: var(--text-secondary, #c4ad90);
+  line-height: 1.65;
+  position: relative;
+  z-index: 1;
+  padding-top: 0.3rem;
+}
+
+/* Paw decorativo */
+.datos-curiosos-decor {
+  text-align: center;
+  margin-top: 2.5rem;
+  font-size: 1.5rem;
+  opacity: 0.2;
+  letter-spacing: 1rem;
+}
+
+/* Responsive */
+@media (max-width: 640px) {
+  .curiosidades-grid {
+    grid-template-columns: 1fr;
+  }
+}

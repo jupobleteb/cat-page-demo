@@ -1,0 +1,37 @@
+{
+  "titulo": "El Mundo de los Felinos",
+  "descripcion": "Descubre la belleza y diversidad de los felinos en todo el mundo",
+  "logo": "🐱",
+  "enlaces": [
+    {"nombre": "Cat Fanciers' Association", "url": "https://cfa.org"},
+    {"nombre": "International Cat Association", "url": "https://ticat.org"},
+    {"nombre": "World Animal Protection - Gatos", "url": "https://worldanimalprotection.org"},
+    {"nombre": "ASPCA - Cuidado de Gatos", "url": "https://www.aspca.org/pet-care/cat-care"}
+  ],
+  "datosCuriosos": [
+    "Los gatos pueden rotar sus orejas 180 grados",
+    "Un gato adulto tiene 30 dientes",
+    "Los gatos duermen entre 12-16 horas al día",
+    "El ronroneo de un gato puede ayudar a sanar huesos",
+    "Los gatos tienen más de 20 músculos para controlar sus orejas",
+    "La huella nasal de cada gato es única, como la huella dactilar humana",
+    "Los gatos pueden saltar hasta 6 veces su altura",
+    "El primer gato en el espacio fue una gata francesa llamada Félicette"
+  ],
+  "fotos": [
+    {"url": "https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?w=400&auto=format&fit=crop", "descripcion": "Gato mirando a la cámara"},
+    {"url": "https://images.unsplash.com/photo-1573865526739-10659fec78a5?w=400&auto=format&fit=crop", "descripcion": "Gato naranja descansando"},
+    {"url": "https://images.unsplash.com/photo-1495360019602-e05980bf549e?w=400&auto=format&fit=crop", "descripcion": "Gato negro elegante"},
+    {"url": "https://images.unsplash.com/photo-1533738363-b7f9aef128ce?w=400&auto=format&fit=crop", "descripcion": "Gatito curioso"}
+  ],
+  "razas": [
+    {"nombre": "Siames", "origen": "Tailandia", "descripcion": "Conocido por su pelaje corto y coloración distintiva con puntos oscuros en cara, patas y cola.", "caracteristicas": ["Vocalizaciones frecuentes", "Muy social", "Inteligente"], "imagen": "https://images.unsplash.com/photo-1513245543730-c81e9c44eeae?w=400&auto=format&fit=crop"},
+    {"nombre": "Persa", "origen": "Irán", "descripcion": "Famoso por su pelaje largo y lujoso, requiere cuidado diario del pelo.", "caracteristicas": ["Tranquilo", "Afectuoso", "Pelaje largo"], "imagen": "https://images.unsplash.com/photo-1564730099446-24c86a40af25?w=400&auto=format&fit=crop"},
+    {"nombre": "Maine Coon", "origen": "Estados Unidos", "descripcion": "Una de las razas más grandes, conocido como 'el gentil gigante'.", "caracteristicas": ["Grande", "Amigable", "Adaptable"], "imagen": "https://images.unsplash.com/photo-1589307202641-b1a1f6d2c5e7?w=400&auto=format&fit=crop"},
+    {"nombre": "Bengalí", "origen": "Estados Unidos", "descripcion": "Pelaje con patrón similar a un leopardo, muy activo y juguetón.", "caracteristicas": ["Energético", "Curioso", "Atractivo"], "imagen": "https://images.unsplash.com/photo-1615497203837-c8484571f5d3?w=400&auto=format&fit=crop"},
+    {"nombre": "Sphynx", "origen": "Canadá", "descripcion": "Famoso por su falta de pelaje, piel cálida y muy cariñoso.", "caracteristicas": ["Sin pelo", "Cariñoso", "Energético"], "imagen": "https://images.unsplash.com/photo-1526336024174-e58f5cdd8423?w=400&auto=format&fit=crop"},
+    {"nombre": "Birman", "origen": "Birmania (Myanmar)", "descripcion": "Gato de pelaje semilargo con patas blancas distintivas.", "caracteristicas": ["Diplomático", "Suave", "Leal"], "imagen": "https://images.unsplash.com/photo-1598207634192-aacdc2f2e4c5?w=400&auto=format&fit=crop"},
+    {"nombre": "Ragdoll", "origen": "Estados Unidos", "descripcion": "Se relaja completamente cuando se le abraza, de ahí su nombre.", "caracteristicas": ["Relajado", "Gigante", "Afectuoso"], "imagen": "https://images.unsplash.com/photo-1533748806429-d18d0ee5f1b0?w=400&auto=format&fit=crop"},
+    {"nombre": "Abisinio", "origen": "Egipto (probablemente)", "descripcion": "Uno de los gatos más antiguos, con pelaje ticked único.", "caracteristicas": ["Ágil", "Inteligente", "Juguetón"], "imagen": "https://images.unsplash.com/photo-1548902026-372b7ae3c9a0?w=400&auto=format&fit=crop"}
+  ]
+}

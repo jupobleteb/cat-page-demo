@@ -1,38 +1,165 @@
-.App {
-  text-align: center;
+/* ============================================
+   FELIS — Revista Felina Digital
+   Tema oscuro de lujo con alma de gato
+   ============================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Inter:wght@300;400;500;600&display=swap');
+
+:root {
+  /* Paleta oscura felina */
+  --bg-main: #0c0a08;
+  --bg-card: #161310;
+  --bg-elevated: #1f1b16;
+  --bg-section: #120f0c;
+
+  /* Dorado cálido — el brillo de los ojos de un gato */
+  --gold: #c9963c;
+  --gold-light: #e8b862;
+  --gold-dim: #8a6528;
+
+  /* Terracota y marrón */
+  --rust: #8b4513;
+  --warm-brown: #5c3317;
+
+  /* Texto */
+  --text-primary: #f0e6d3;
+  --text-secondary: #c4ad90;
+  --text-muted: #7d6b55;
+
+  /* Bordes y separadores */
+  --border: #2a2218;
+  --border-gold: rgba(201, 150, 60, 0.3);
+
+  /* Sombras */
+  --shadow-card: 0 4px 24px rgba(0, 0, 0, 0.5);
+  --shadow-gold: 0 0 30px rgba(201, 150, 60, 0.15);
+  --shadow-hover: 0 12px 48px rgba(0, 0, 0, 0.7);
+
+  /* Radios */
+  --radius-sm: 8px;
+  --radius-md: 14px;
+  --radius-lg: 22px;
+
+  /* Transiciones */
+  --ease: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  --ease-bounce: 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+html {
+  scroll-behavior: smooth;
 }
 
-.App-header {
-  background-color: #282c34;
+body {
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  background-color: var(--bg-main);
+  color: var(--text-primary);
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.app {
   min-height: 100vh;
+  background: var(--bg-main);
+  position: relative;
+  overflow-x: hidden;
+}
+
+main {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 3rem 2rem 6rem;
   display: flex;
   flex-direction: column;
+  gap: 4rem;
+}
+
+/* Títulos de sección */
+.section-title {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 2.5rem;
+  display: flex;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  gap: 0.75rem;
 }
 
-.App-link {
-  color: #61dafb;
+.section-title::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: linear-gradient(to right, var(--gold-dim), transparent);
+  margin-left: 1rem;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.section-title .icon {
+  color: var(--gold);
+  font-size: 1.8rem;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: var(--bg-main);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--gold-dim);
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--gold);
+}
+
+/* Selección */
+::selection {
+  background-color: var(--gold-dim);
+  color: var(--text-primary);
+}
+
+/* Focus accesible */
+:focus-visible {
+  outline: 2px solid var(--gold);
+  outline-offset: 3px;
+}
+
+/* Links globales */
+a {
+  color: var(--gold);
+  text-decoration: none;
+  transition: color var(--ease);
+}
+a:hover {
+  color: var(--gold-light);
+}
+
+/* Animaciones */
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(24px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes shimmer {
+  0%   { background-position: -200% center; }
+  100% { background-position:  200% center; }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  main {
+    padding: 2rem 1rem 4rem;
+    gap: 3rem;
   }
-  to {
-    transform: rotate(360deg);
+  .section-title {
+    font-size: 1.7rem;
   }
 }

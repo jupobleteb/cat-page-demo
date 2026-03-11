@@ -1,70 +1,80 @@
-# Getting Started with Create React App
+# 🐱 Cat Page Demo
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Revista felina digital hecha con React. Información, galería, curiosidades y un juego interactivo de polilla para entretener a tu gato.
 
-## Available Scripts
+🌐 **[Ver en vivo](https://jupobleteb.github.io/cat-page-demo)**
 
-In the project directory, you can run:
+---
 
-### `npm start`
+## ✨ Características
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- **Galería de fotos** — imágenes verificadas de gatos en layout masonry
+- **Curiosidades felinas** — 10 datos sobre el mundo de los gatos
+- **Catálogo de razas** — 12 razas con descripción, origen, características, peso y esperanza de vida
+- **Juego para gatos** — polilla animada sobre pared estucada, con movimientos aleatorios y pantalla completa
+- **Recursos externos** — links a organizaciones felinas internacionales
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+---
 
-### `npm test`
+## 🦋 Juego para gatos
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Una polilla dibujada en canvas con comportamiento realista:
 
-### `npm run build`
+- Se queda quieta **2.8 a 4.6 segundos** y luego vuela a una posición aleatoria
+- Movimientos en **tres rangos de distancia**: corto, medio y largo (cruzando toda la pantalla)
+- Velocidad proporcional a la distancia recorrida
+- Aleteo lento cuando está posada, rápido al volar
+- **Pantalla completa** compatible con Android y desktop (el botón se oculta si el dispositivo no lo soporta)
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+---
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## 🛠 Stack
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+| Tecnología | Versión |
+|---|---|
+| React | 19.2.4 |
+| Create React App | 5.0.1 |
+| gh-pages | 6.x |
 
-### `npm run eject`
+---
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## 📁 Estructura
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+```
+src/
+├── App.jsx
+├── App.css                     # Tema oscuro global + variables CSS
+├── data/
+│   └── datos.js                # Fotos, razas, curiosidades y enlaces
+└── components/
+    ├── Header.jsx / .css       # Hero a pantalla completa
+    ├── FotosGallery.jsx / .css
+    ├── DatosCuriosos.jsx / .css
+    ├── JuegoPolilla.jsx / .css  # Juego canvas
+    ├── Razas.jsx / .css
+    └── EnlacesExternos.jsx / .css
+```
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+---
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+## 🚀 Uso local
 
-## Learn More
+```bash
+npm install
+npm start        # http://localhost:3000
+```
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## 📦 Deploy a GitHub Pages
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+```bash
+npm run deploy   # hace build + sube a la rama gh-pages automáticamente
+```
 
-### Code Splitting
+> Primera vez: ir a **Settings → Pages → Source → gh-pages → / (root)**
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+---
 
-### Analyzing the Bundle Size
+## 🖼 Imágenes
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- **Galería**: Unsplash (IDs verificados como gatos)
+- **Razas**: [TheCatAPI](https://thecatapi.com) con `breed_ids` específicos — 100% verificadas por raza

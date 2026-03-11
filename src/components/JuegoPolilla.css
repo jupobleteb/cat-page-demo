@@ -1,0 +1,101 @@
+/* ============================================
+   JUEGO POLILLA — Área de juego para gatos
+   ============================================ */
+
+.juego-polilla {
+  scroll-margin-top: 2rem;
+}
+
+/* Contenedor del juego */
+.juego-container {
+  position: relative;
+  width: 100%;
+  height: 520px;
+  border-radius: 16px;
+  overflow: hidden;
+  border: 1px solid var(--border, #2a2218);
+  box-shadow: inset 0 0 60px rgba(0, 0, 0, 0.6),
+              0 8px 40px rgba(0, 0, 0, 0.5);
+  /* Sin cursor para no distraer al gato */
+  cursor: crosshair;
+}
+
+/* Canvas ocupa todo el contenedor */
+.juego-canvas {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+/* Pantalla completa nativa */
+.juego-container:fullscreen {
+  width: 100vw;
+  height: 100vh;
+  border-radius: 0;
+  border: none;
+}
+
+.juego-container:-webkit-full-screen {
+  width: 100vw;
+  height: 100vh;
+  border-radius: 0;
+}
+
+/* Botón de pantalla completa */
+.juego-fs-btn {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.45rem 1.1rem;
+  background: rgba(12, 10, 8, 0.72);
+  border: 1px solid rgba(201, 150, 60, 0.35);
+  color: var(--gold, #c9963c);
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  border-radius: 100px;
+  cursor: pointer;
+  backdrop-filter: blur(10px);
+  transition: background 0.25s ease, border-color 0.25s ease, color 0.25s ease;
+}
+
+.juego-fs-btn:hover {
+  background: rgba(201, 150, 60, 0.18);
+  border-color: var(--gold, #c9963c);
+  color: var(--gold-light, #e8b862);
+}
+
+/* Badge inferior */
+.juego-hint {
+  position: absolute;
+  bottom: 1rem;
+  left: 1rem;
+  font-size: 0.73rem;
+  font-weight: 500;
+  letter-spacing: 0.07em;
+  color: rgba(240, 230, 211, 0.38);
+  pointer-events: none;
+  user-select: none;
+}
+
+/* Responsive / Mobile */
+@media (max-width: 640px) {
+  .juego-container {
+    height: 75vw;
+    min-height: 300px;
+  }
+
+  /* Botón más grande para dedos */
+  .juego-fs-btn {
+    top: 0.75rem;
+    right: 0.75rem;
+    padding: 0.6rem 1.2rem;
+    font-size: 0.85rem;
+    /* Área táctil mínima de 44px recomendada por Apple/Google */
+    min-height: 44px;
+  }
+}
