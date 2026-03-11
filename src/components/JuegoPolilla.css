@@ -41,6 +41,17 @@
   border-radius: 0;
 }
 
+/* Fullscreen por CSS — fallback para iOS Safari */
+.juego-cssfs {
+  position: fixed !important;
+  inset: 0 !important;
+  width: 100vw !important;
+  height: 100dvh !important;
+  border-radius: 0 !important;
+  border: none !important;
+  z-index: 9999;
+}
+
 /* Botón de pantalla completa */
 .juego-fs-btn {
   position: absolute;

@@ -316,6 +316,7 @@ export default function JuegoPolilla() {
   });
   const rafRef = useRef(null);
   const [isFS, setIsFS] = useState(false);
+  const [isCssFS, setIsCssFS] = useState(false); // fullscreen por CSS (fallback iOS)
 
   const runLoop = useCallback(() => {
     const canvas = canvasRef.current;
@@ -456,8 +457,8 @@ export default function JuegoPolilla() {
     };
   }, [runLoop]);
 
-  // Fullscreen con soporte para webkit (iOS Safari) y Android
-  const fsSupported = !!(
+  // Detectar soporte nativo de fullscreen
+  const nativeFSSupported = !!(
     document.documentElement.requestFullscreen ||
     document.documentElement.webkitRequestFullscreen
   );
@@ -465,14 +466,21 @@ export default function JuegoPolilla() {
   const enterFS = () => {
     const el = containerRef.current;
     if (!el) return;
-    if (el.requestFullscreen)          el.requestFullscreen();
+    if (el.requestFullscreen)            el.requestFullscreen();
     else if (el.webkitRequestFullscreen) el.webkitRequestFullscreen();
+    else                                 setIsCssFS(true);  // fallback iOS
   };
 
   const exitFS = () => {
-    if (document.exitFullscreen)            document.exitFullscreen();
-    else if (document.webkitExitFullscreen) document.webkitExitFullscreen();
+    if (document.fullscreenElement || document.webkitFullscreenElement) {
+      if (document.exitFullscreen)            document.exitFullscreen();
+      else if (document.webkitExitFullscreen) document.webkitExitFullscreen();
+    } else {
+      setIsCssFS(false); // salir del CSS fullscreen
+    }
   };
+
+  const inFullscreen = isFS || isCssFS;
 
   useEffect(() => {
     const handler = () =>
@@ -492,21 +500,19 @@ export default function JuegoPolilla() {
         Juego para Gatos
       </h2>
 
-      <div ref={containerRef} className="juego-container">
+      <div ref={containerRef} className={`juego-container${isCssFS ? ' juego-cssfs' : ''}`}>
         <canvas ref={canvasRef} className="juego-canvas" />
 
-        {fsSupported && (
-          <button
-            className="juego-fs-btn"
-            onClick={isFS ? exitFS : enterFS}
-            title={isFS ? 'Salir de pantalla completa' : 'Pantalla completa'}
-          >
-            {isFS ? '✕ Salir' : '⛶ Pantalla completa'}
-          </button>
-        )}
+        <button
+          className="juego-fs-btn"
+          onClick={inFullscreen ? exitFS : enterFS}
+          title={inFullscreen ? 'Salir de pantalla completa' : 'Pantalla completa'}
+        >
+          {inFullscreen ? '✕ Salir' : '⛶ Pantalla completa'}
+        </button>
 
         <div className="juego-hint">
-          🐱 Pon a tu gato frente a la pantalla
+          🐱 {inFullscreen ? '' : 'Pon a tu gato frente a la pantalla'}
         </div>
       </div>
     </section>
